@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  #d-sm{
+    display: none;
+  }
+}
+.page-link{
+	padding: 17px;
+	margin: 6px;
+	border: none;
+	border-radius: 40px; 
+}
+.page-item>a:hover{
+	background-color: #2A757B;
+    color: white;
+}
