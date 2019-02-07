@@ -2,6 +2,14 @@
 	color: blue;
 }
 
+h2{
+  color: #EBDBDD;
+}
+
+.card{
+  opacity: 0.93;
+}
+
 #loading-overlay {
   pointer-events: all;
   z-index: 99999;

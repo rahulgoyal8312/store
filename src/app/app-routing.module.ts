@@ -32,6 +32,11 @@ const routes: Routes = [
 	  	path: ':article-id', component: HomeComponent
 	  }
   	]	
+},
+{
+	path: '**',
+	redirectTo: 'login',
+	pathMatch: 'full'
 }
 ];
 

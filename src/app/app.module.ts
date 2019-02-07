@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthLogGuard } from './auth/auth-log.service';
 import { SummaryPipe } from './summary.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SummaryPipe } from './summary.pipe';
     FormsModule,
     AngularFontAwesomeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [AuthService,AuthGuard,AuthLogGuard],
   bootstrap: [AppComponent]

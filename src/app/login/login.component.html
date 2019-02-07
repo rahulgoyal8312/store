@@ -1,52 +1,60 @@
-<div class="container">
-	<div class="row" style="padding-top: 40px;">
-		<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
-			<div class="text-center mb-4">
-				<h2  class="font-weight-bold text-dark" style="font-family: sans-serif;">
-					Store Login
-				</h2>
-			</div>
-			<div class="m-1 alert alert-danger" *ngIf="errors">{{ errors }}</div>
-			<form class="form" #f="ngForm" (ngSubmit)="onLogin(f)">
-				<div class="input-group form-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="fa fa-envelope"></i>
-						</span>
-					</div>
-					<input type="email" 
-					placeholder="Enter Email" 
-					#email
-					required=""
-					ngModel
-					name="email"
-					#email="ngModel"
-					class="form-control"
-					>
-				</div>
-				<div class="input-group form-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<i class="fa fa-key"></i>
-						</span>
-					</div>
-					<input type="password" 
-					placeholder="Enter password" 
-					required=""
-					name="password"
-					minlength="6" 
-					#password
-					ngModel
-					#password="ngModel" 
-					class="form-control"
-					>
-				</div>
+<section id="login">
+	<div class="container">
+		<div class="row" style="padding-top: 40px;">
+			<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-6">
+	            <div class="card bg-primary text-center card-form p-2 m-2">
+	              	<div class="card-body">		
+						<div class="text-center mb-4">
+							<h2  class="font-weight-bold" style="font-family: sans-serif;">
+								Store Login
+							</h2>
+						</div>
+						<div class="m-1 alert alert-danger" *ngIf="errors">{{ errors }}</div>
+						
+						<form class="form m-1" #f="ngForm" (ngSubmit)="onLogin(f)">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="fa fa-envelope"></i>
+									</span>
+								</div>
+								<input type="email" 
+								placeholder="Enter Email" 
+								#email
+								required=""
+								ngModel
+								name="email"
+								#email="ngModel"
+								class="form-control"
+								>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="fa fa-key"></i>
+									</span>
+								</div>
+								<input type="password" 
+								placeholder="Enter password" 
+								required=""
+								name="password"
+								minlength="6" 
+								#password
+								ngModel
+								#password="ngModel" 
+								class="form-control"
+								>
+							</div>
 
-				<button class="btn btn-primary btn-block" [disabled]='!f.valid'>Login</button>
-			</form>
+							<button class="btn btn-outline-primary text-dark font-weight-bold bg-white btn-block" [disabled]='!f.valid'>Login</button>
+						</form>
+						<div class="text-center"><a style="cursor: pointer;">Forget Password?</a></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>	
 
 <ng-template id="loading-overlay" [ngIf]="isLoading">
 </ng-template>

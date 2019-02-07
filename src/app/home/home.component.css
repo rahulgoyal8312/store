@@ -6,8 +6,8 @@
 .page-link{
 	padding: 17px;
 	margin: 6px;
-	border: none;
-	border-radius: 40px; 
+	border: 1px solid black;
+	border-radius: 10px; 
 }
 .page-item>a:hover{
 	background-color: #2A757B;

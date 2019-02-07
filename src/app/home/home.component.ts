@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,14 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 articles: any;
-
+isOpen = false;
 
 pagination: { current: number, last:number, next: string, prev:string };
+modArticle: any;
 
   constructor(private http:HttpClient,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private modal: NgbModal) { }
 
   ngOnInit() {
     this.fetchArticle('http://localhost:8000/api/articles');
@@ -27,6 +30,10 @@ pagination: { current: number, last:number, next: string, prev:string };
     };
 
   }
+
+  // open(){
+  //   this.isOpen = true;
+  // }
 
   fetchArticle(url){
     this.http.get(url).pipe(
